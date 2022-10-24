@@ -32,7 +32,7 @@ errorStats <- function(mahal,...,scale=FALSE,pzero=0.1,plg=0.5,seeMethod="lm")
    frmmsd0 = function(x,label,pzero)
    {
       if (missing(x)) stop ("x required.")
-      if (class(x) != "yai") stop ("class must be yai")
+      if(!inherits(x, "yai")) stop ("class must be yai")
       if (x$method != "mahalanobis") stop ("method must be mahalanobis")
       if (is.null(x$neiDstRef)) stop ("reference neighbors must be present")
       xr=obsMinusImp(x)^2
@@ -50,7 +50,7 @@ errorStats <- function(mahal,...,scale=FALSE,pzero=0.1,plg=0.5,seeMethod="lm")
    frmsdlg = function(x,label,plg)
    {
       if (missing(x)) stop ("x required.")
-      if (class(x) != "yai") stop ("class must be yai")
+      if(!inherits(x, "yai")) stop ("class must be yai")
       if (is.null(x$neiDstRef)) stop ("reference neighbors must be present")
       xr=obsMinusImp(x)^2
       if (ncol(xr) == 0) stop ("nothing to compute")
@@ -73,7 +73,7 @@ errorStats <- function(mahal,...,scale=FALSE,pzero=0.1,plg=0.5,seeMethod="lm")
    fsee = function(x,label,method)
    {
       if (missing(x)) stop ("x required.")
-      if (class(x) != "yai") stop ("class must be yai")
+      if(!inherits(x, "yai")) stop ("class must be yai")
       mfg = paste(xvars(x),collapse=",5)+s(")
       mfl = paste(xvars(x),collapse="+")
       data=cbind(x$yRefs,x$xRefs)

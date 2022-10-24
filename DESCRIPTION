@@ -1,24 +1,44 @@
 Package: yaImpute
+Type: Package
+Title: Nearest Neighbor Observation Imputation and Evaluation Tools
 Version: 1.0-33
 Date: 2022-10-24
-Title: Nearest Neighbor Observation Imputation and Evaluation Tools
-Author: Nicholas L. Crookston, Andrew O. Finley, Jeffrey Evans, John Coulston (Sunil Arya and David Mount for ANN)
+Authors@R: c(
+  person(family="Evans", given="Jeffrey S.", email = "jeffrey_evans@tnc.org", 
+         role = c("aut", "cre"), comment = c(ORCID = "0000-0002-5533-7044")),
+  person(family="Crookston", given="Nicholas L.", role = c("aut")),
+  person(family="Finley", given="Andrew O.", role = c("aut")),			 
+  person(family="Coulston (Sunil Arya and David Mount for ANN)", given="John", 
+         role = c("ctb", "com")) )
+Description: Performs nearest neighbor-based imputation using one or more alternative 
+    approaches to processing multivariate data. These include methods based on canonical 
+    correlation: analysis, canonical correspondence analysis, and a multivariate adaptation 
+    of the random forest classification and regression techniques of Leo Breiman and Adele 
+    Cutler. Additional methods are also offered. The package includes functions for 
+    comparing the results from running alternative techniques, detecting imputation targets 
+    that are notably distant from reference observations, detecting and correcting 
+    for bias, bootstrapping and building ensemble imputations, and mapping results.
+Depends: R (>= 3.0.0)
+Imports: 
+  grDevices, 
+  graphics, 
+  stats, 
+  utils
+Suggests: 
+  vegan, 
+  ccaPP, 
+  randomForest, 
+  gam, 
+  fastICA, 
+  parallel, 
+  gower
 Copyright: ANN library is copyright University of Maryland and Sunil
         Arya and David Mount. See file COPYRIGHTS for details.
-Maintainer: Jeffrey Evans <jeffrey_evans@tnc.org>
-Depends: R (>= 3.0.0)
-Imports: grDevices, graphics, stats, utils
-Suggests: vegan, ccaPP, randomForest, gam, fastICA, parallel, gower
-NeedsCompilation: yes
-Description: Performs nearest neighbor-based imputation using one or more alternative 
- approaches to processing multivariate data. These include methods based on canonical 
- correlation: analysis, canonical correspondence analysis, and a multivariate adaptation 
- of the random forest classification and regression techniques of Leo Breiman and Adele 
- Cutler. Additional methods are also offered. The package includes functions for 
- comparing the results from running alternative techniques, detecting imputation targets 
- that are notably distant from reference observations, detecting and correcting 
- for bias, bootstrapping and building ensemble imputations, and mapping results.
+Maintainer: Jeffrey S. Evans <jeffrey_evans@tnc.org>
 License: GPL (>= 2)
-
 URL: https://github.com/jeffreyevans/yaImpute
 BugReports: https://github.com/jeffreyevans/yaImpute/issues
+NeedsCompilation: yes
+Repository: CRAN
+Encoding: UTF-8
+RoxygenNote: 7.2.1

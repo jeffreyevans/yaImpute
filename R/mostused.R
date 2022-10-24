@@ -5,7 +5,7 @@
 mostused = function (object,n=20,kth=NULL)
 {
    if (is.null(object)) stop ("object required.")
-   if (class(object) == "yai") object = foruse(object,kth=kth)
+   if (inherits(object, "yai")) object = foruse(object,kth=kth)
    if (is.null(object)) stop ("no neighbors found using this object")
    if (class(object)[2] != "foruse.yaImpute") stop("class must be yai or foruse.yaImpute")
    tab=table(object[,1])

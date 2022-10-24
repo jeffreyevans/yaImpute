@@ -22,7 +22,7 @@
 
 foruse = function (object,kth=NULL,method="kth",targetsOnly=FALSE)
 {
-   if (class(object) != "yai") stop ("class must be yai")
+   if(!inherits(object, "yai")) stop ("class must be yai")
    valid=c("kth","random","randomWeighted")
    if (is.na(match(method,valid))) stop (paste("method must be one of",paste(valid,collapse=", ")))
    

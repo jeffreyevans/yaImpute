@@ -1,7 +1,7 @@
 applyMask <- function
 (object, refGroups=NULL, trgGroups=NULL, method="removeWhenCommon", k=1)
 {
-  if (class(object) != "yai") stop("object must be of class yai")
+  if(!inherits(object, "yai")) stop("object must be of class yai")
   valid <- c("removeWhenCommon","keepWhenCommon")
   if (is.na(match(method,valid))) stop (paste("method must be one of",paste(valid,collapse<-", ")))
   if (is.null(refGroups) | is.null(trgGroups)) stop("refGroups and trgGroups must be defined")

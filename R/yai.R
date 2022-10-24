@@ -175,9 +175,9 @@ yai <- function(x=NULL,y=NULL,data=NULL,k=1,noTrgs=FALSE,noRefs=FALSE,
          theFormula=NULL
       }
    }
-   else if (class(x) == "formula")
+   else if (inherits(x,"formula"))
    {
-      if (class(y) == "formula") yall=model.frame(y,data=data)
+      if (inherits(y,"formula")) yall=model.frame(y,data=data)
       xall=model.frame(x,data=data)
       obsDropped=setdiff(rownames(data),rownames(xall))
       if (length(obsDropped)) warning (length(obsDropped)," observation(s) removed")

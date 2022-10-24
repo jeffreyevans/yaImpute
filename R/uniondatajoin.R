@@ -7,7 +7,7 @@ unionDataJoin=function(...,warn=TRUE)
 #  when warn is TRUE, columns that occur in more than one source are listed as a warning.
 
    args=list(...)
-   if (length(args)==1 && class(args[[1]]) == "list") args=args[[1]]
+   if (length(args) == 1 && inherits(args[[1]], "list")) args=args[[1]]
    for (d in args)
    {
       if (!is.data.frame(d) && !is.matrix(d)) stop ("arguments or list members must be matrices or data frames")

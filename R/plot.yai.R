@@ -45,7 +45,7 @@ plot.yai = function (x,vars=NULL,pointColor=1,lineColor=2,spineColor=NULL,residu
       {
          p=try(spineplot(x=x[,imp],y=x[,obs],xlab="Imputed",ylab="Observed",
                    col=spineColor))
-         if (class(p)=="try-error") warning ("no plot could be created for ",imp)
+         if (inherits(p, "try-error")) warning ("no plot could be created for ",imp)
       }
       else
       {

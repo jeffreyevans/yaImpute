@@ -1,7 +1,7 @@
 notablyDifferent <- function (object,vars=NULL,threshold=NULL,p=.05,...)
 {
    if (missing(object)) stop ("object required.")
-   if (class(object)[1] != "yai")  stop ("object must be class yai")
+   if(!inherits(object, "yai"))  stop ("object must be class yai")
    refIds <- rownames(object$neiDstRefs)
    if (length(refIds) == 0) stop ("references are required")
    cl <- match.call()
@@ -55,7 +55,7 @@ notablyDifferent <- function (object,vars=NULL,threshold=NULL,p=.05,...)
 plot.notablyDifferent <- function (x,add=FALSE,...)
 { 
   if (missing(x)) stop ("x required")
-  if (class(x) == "list")
+  if (inherits(x, "list"))
   {
     if (!all(unlist(lapply(x,function (xx) class(xx)=="notablyDifferent"))))
        stop ("all members in the x list must be class notablyDifferent") 
@@ -82,7 +82,7 @@ plot.notablyDifferent <- function (x,add=FALSE,...)
   }
   else
   { 
-    if (class(x) != "notablyDifferent")  
+    if(!inherits(x, "notablyDifferent")) 
         stop ("x must be class notablyDifferent")
     all <- c(x$rmsdS.refs,x$rmsdS.trgs)
     pch <- c(rep(1,length(x$rmsdS.refs)),rep(2,length(x$rmsdS.trgs)))

@@ -29,7 +29,7 @@
 
 newtargets=function(object,newdata,k=NULL,ann=NULL)
 {
-   if (class(object) != "yai") stop ("object must be class yai")
+   if(!inherits(object, "yai")) stop ("object must be class yai")
    if (object$method == "ensemble") 
      stop ("newtargets can not be found for objects with method 'ensemble'.")
    if (is.null(newdata) | nrow(newdata)==0) stop ("newdata is required")

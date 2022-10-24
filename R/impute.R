@@ -204,7 +204,7 @@ impute.yai <- function (object,ancillaryData=NULL,method="closest",
 
 
    if (missing(object)) stop ("object required.")
-   if (class(object) != "yai") stop ("class must be yai")
+   if(!inherits(object, "yai")) stop ("class must be yai")
 
    if (is.null(vars))
    {

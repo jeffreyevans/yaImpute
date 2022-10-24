@@ -300,7 +300,8 @@ function(object,xfiles,outfiles,xtypes=NULL,ancillaryData=NULL,
          factorMatch = get("factorMatch",asNamespace("yaImpute"))
          newdata=factorMatch(newdata,xlevels)
          ills = attr(newdata,"illegalLevelCounts")
-         if (class(ills)=="list")
+		 if(inherits(ills, "list"))
+         #if( class(ills)=="list" )
          {
             if (is.null(sumIlls))
             {
@@ -473,7 +474,8 @@ function(object,xfiles,outfiles,xtypes=NULL,ancillaryData=NULL,
    {
       cat ("Factors with levels found in input maps but not present in data used to fit the model\n")
       cat ("(number of map cells; counts do not include cells coded NODATA on other maps):\n")
-      if (class(sumIlls[[1]]) == "table") print (sumIlls)
+	  if (inherits(sumIlls[[1]], "table")) print (sumIlls)
+      #if (class(sumIlls[[1]]) == "table") print (sumIlls)
       else
       {
          for (a in names(sumIlls)) 

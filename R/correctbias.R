@@ -1,11 +1,12 @@
 correctBias <- function
 (object,trgVal,trgValCI=NULL,nStdev=1.5,excludeRefIds=NULL,trace=FALSE)
 {
-  if (class(object) != "yai") stop("object must be of class yai")
+  if(!inherits(object, "yai")) stop("object must be of class yai")
 
   if (missing(trgVal)) stop("trgVal must be defined.")
   trgValExpression = if (is.expression(trgVal)) trgVal else
-    if (class(trgVal) == "character") parse(text=trgVal) else NULL
+    #if (class(trgVal) == "character") parse(text=trgVal) else NULL
+	if(inherits(trgVal, "character")) parse(text=trgVal) else NULL
   if (!is.expression(trgValExpression)) 
                   stop ("trgVal can not be coerced into an expression.")
 
@@ -18,12 +19,13 @@ correctBias <- function
   else
   {
     trgValDataCopy = NULL
-    if (class(excludeRefIds) == "character")
+    if (inherits(excludeRefIds, "character"))
     {
       if (excludeRefIds[1] != "all") excludeRefIds <- 
          na.omit(match(excludeRefIds,rownames(trgValData)))
     }
-    if (class(excludeRefIds) == "numeric" || class(excludeRefIds) == "integer" )
+    #if (class(excludeRefIds) == "numeric" || class(excludeRefIds) == "integer" )
+	if(inherits(excludeRefIds, "numeric") || inherits(excludeRefIds, "integer")) 
     { 
       excludeRefIds <- unique(sort(excludeRefIds))
       if (length(excludeRefIds) > 0 && nrow(trgValData)-length(excludeRefIds) > 1) 

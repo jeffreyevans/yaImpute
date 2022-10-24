@@ -63,8 +63,8 @@ factorMatch = function (x,xlevels)
 
 addIllegalLevels=function(a1,a2)
 {
-   if (class(a1)=="data.frame") a1=attr(a1,"illegalLevelCounts")
-   if (class(a2)=="data.frame") a2=attr(a2,"illegalLevelCounts")
+   if (inherits(a1, "data.frame")) a1=attr(a1,"illegalLevelCounts")
+   if (inherits(a2, "data.frame")) a2=attr(a2,"illegalLevelCounts")
    vars=union(names(a1),names(a2))
    if (length(vars)==0) return(NULL)
    out =vector(mode = "list", length = length(vars))
