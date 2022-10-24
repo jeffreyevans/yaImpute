@@ -1,0 +1,52 @@
+useDynLib(yaImpute)
+
+export(
+ann,
+applyMask, 
+AsciiGridImpute, 
+AsciiGridPredict, 
+bestVars,
+buildConsensus,
+compare.yai, 
+correctBias, 
+cor.yai, 
+ensembleImpute,
+errorStats, 
+foruse, 
+grmsd,
+impute, 
+impute.yai,
+mostused, 
+newtargets,
+notablyDifferent,
+notablyDistant,
+plot.notablyDifferent, 
+plot.varSel,
+predict.yai,
+rmsd, 
+rmsd.yai, 
+unionDataJoin,
+vars, 
+varSelection,
+whatsMax, 
+xvars, 
+yai, 
+yaiRFsummary, 
+yaiVarImp, 
+yvars)
+
+importFrom(grDevices, gray, nclass.Sturges)
+importFrom(utils, compareVersion, flush.console, head, 
+           packageDescription)
+import(graphics, stats)
+
+S3method(impute, yai)
+S3method(plot, compare.yai)
+S3method(plot, impute.yai)
+S3method(plot, notablyDifferent)
+S3method(plot, varSel)
+S3method(plot, yai)
+S3method(predict, yai)
+S3method(print, yai)
+S3method(summary, yai)
+

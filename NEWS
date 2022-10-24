@@ -1,0 +1,218 @@
+Changes in version 1.0-33:
+
+* Modified several url's as needed to adjust to changes in some web addresses.
+* Changed reference to original JSS paper to use doi as suggested by Achim Zeileis.
+* Changed maintainer to Jeffrey Evans <jeffrey_evans "at" tnc.org> and added him as an author.
+* Added code in newtargets() that changes "newdata" to a dataframe if 
+it isn't one on input (thanks to Caio Hamamura for the suggestion).
+
+Changes in version 1.0-32:
+
+* Corrected the interface information in yaImpute_init.c so that it matches
+the actual arguments of rfoneprox. Thanks to Prof Ripley for finding the error.
+
+* Added an argument to varSelection and grmsd that is passed to impute.yai so that the
+method of computing the imputed value can be controlled. 
+
+Changes in version 1.0-31:
+
+* Changed a variable name in one of the ANN routines so that the code can 
+compile on Solaris. Removed an unused variable in the ANN routines. Thanks to 
+Prof Ripley for finding the error.
+
+Changes in version 1.0-30:
+
+* Removed the c++ "register" keyword from the ann sources as requested by CRAN.
+* Added method="gower" for gower distance that allows categorical variables in 
+the X data (the Y data are ignored, analogous to method="raw" where the relationship
+between the X and Y data are not relevant).
+* Fixed a bug in varSelection pointed out by Francisco Mauro.
+
+Changes in version 1.0-27 and 1.0-29:
+
+* Addressed an issue in the ann source code (likely a false positive) found 
+by rchk at CRAN.
+* Added RegisteredNativeSymbol usage according to best practices
+* The error when bootstraping with method="randomForests" is fixed.
+* Fixed an error in yai() when it is called by varSelection() using 
+yaiMethod="randomForest", thanks to Andrew Haywood.
+
+Changes in version 1.0-25 and 1.0-26:
+
+* Added import directives to meet recent CRAN rules that say that functions 
+from default packages other than base which are used in the package
+code need to be imported.
+
+Changes in version 1.0-24:
+
+* Changed the examples for several functions so that they run even when dependent
+packages are not present.
+* Changed package title to comply with CRAN rules
+* Changed require to requireNamespace in errorstats.R
+* Fixed error in AsciiGridImpute insuring that factors are correctly output
+and that the legend is accurate.
+* Fixed url to a citation thanks to RForge checks!
+* Added the ability to pass ... to impute() it is called by AsciiGridImpute().
+* Made several changes to conform to the instructions regarding the use of 
+"requireNamespace" for "suggested" packages. 
+* Modified how reference observations are delt with when bootstrapping. 
+Now, a reference that has been selected more than once due to sampling with 
+replacement can not be used to represent itself unless options are used to 
+force that behavior. Prior to this change, a reference could be used to represent
+itself when it existed more than once in the bootstrap sample causing deflated
+error estimates. Thanks to Patrick Fekety for pointing the problem and doing
+most of the work that lead to a solution.
+
+Changes in version 1.0-23:
+
+* Added package parallel to the suggested list in DESCRIPTION, issue reported by
+RForge checks.
+* Fixed a bug in yai() when categorical predictors are used, reported by Nan Pond.
+* Fixed a bug in yai() that was revealed when bootstrapping. 
+Thanks to Jan Rombouts.
+* Enhanced AsciiGridImpute() to trim the number of files being read. 
+Thanks to Nicolas Py.
+
+Changes in version 1.0-22:
+
+* Greatly improved the speed of impute.R, thanks to Bastien Ferland-Raymond who 
+pointed out the problem. 
+* Fixed an error in AsciiGridImpute() pointed out by Nicolas PY.
+* Fixed an error in yai() concerning the specification of mtry when 
+method="randomForest", thanks to Guy Strickland.
+
+Changes in version 1.0-21:
+
+* Added code to grmsd() so that it "runs" wiht single variables (ie, just one y from lm).
+* Added an argument to yai() that allows one to specify a different subset of X-variables
+for each Y-variable. 
+* Fixed a bug in reporting the results when method="randomForest" and the rfmethod="regression".
+* Fixed two long-standing bugs in AsciiGridImpute and AsciiGridPredict. One was
+that the output grid headers would not be output correctly when the nodata 
+argument was used and the other delt with a problem when predict returned a matrix.
+* Modified the examples in AsciiGridImpute so that they use a tempdir() for output files.
+* Added the use of grmsd() in the examples in yai().
+* Fixed return value in grmsd() when argument rtnVectors is TRUE
+
+Changes in version 1.0-20:
+
+* Added varSelection() to aid in variable selection. A plot function is 
+include to aid in understanding the results; bestVars() returns what seem to be
+a set of "best" variables for objects created by varSelection().
+* Added grmsd() to compute a generalized root mean square error which is a Mahalanobis
+distance between observed and imputed. Provides a single score useful for ranking
+imputation models and methods (or returns vectors of distances).
+* Added rmsd(); it is an alias to rmsd.yai().
+* Added method="median" to function impute.
+* Added method="msnPP" to function yai to enable using canonical correlation via 
+projection pursuit from package ccaPP
+* Added ensembleImpute() to get an mean or median imputation for several
+separate imputations. Computes the mode for factors.
+* Added John Coulston as an author on some of the new functions and the package.
+* Added bootstrap= option to yai() so that reference observations can 
+be sampled with replacement forming a bootstrap rep.
+* Added sampleVars= option to yai() so that X-, Y- or both kinds of variables
+can be sampled.
+* Added buildConsensus() to find a consensus imputation over several 
+reps and forming one yai object. 
+* Added (at long last) a predict function.
+* Added the ability to specify the scaling values for rmsd.yai and compare.yai
+* Modified some help files to improve acknowledgments and cross references.
+* Fixed a small typographical error in the help for correctBias(), accomplished 
+minor edits to other help files. 
+* Added the ability to specify k in function newtargets (how did I miss that?).
+* Changed the variable importance score calculation for yaiVarImp()
+from "MeanDecreaseGini" to "MeanDecreaseAccuracy" and made it clear in the help file.
+* Added function applyMask() that removes (or keeps) reference neighbors that share 
+group membership with a target. Thanks to Clara Antón Fernández for suggestions that
+lead to this function being added.
+* Small update to the COPYRIGHTS file to make clear that Andrew O. Finley wrote
+annImpute.cpp
+
+Changes in version 1.0-19:
+
+* Moved COPYRIGHTS to inst/COPYRIGHTS and greatly added detailed information 
+to the file.
+* Modified DESCRIPTION to note contribution of the authors of ANN (as per 
+policy).
+* Added a Copyright statement to DESCRIPTION.  
+* Added detail to the Description statement in file DESCRIPTION.
+* Fixed print.yai.R error when there is only one target and K>1.
+* Modified the file handling in AsciiGridPredict (and AsciiGridImpute).
+* Fixed a case where a reference picks itself as the second most similar neighbor. This only
+happens when there are two or more identical reference observations (thanks to Petteri Packalen).
+* Further revision to the ftest to deal with degenerate cases and put in a trap on the use
+of method="msn2" when there are too few observations.
+
+Changes in version 1.0-18:
+
+* Added a function (notablyDifferent) to use a consistent method to identify 
+observations with large error. 
+* Added an function to (plot.notablyDifferent) to plot the data from notablyDifferent().
+* Modified the ftest in yai() so that it correctly computes the number of canonical variates.
+
+Changes in version 1.0-17:
+
+* Replaced deprecated calls to sd(<matrix>|<data.frame>) and mean(<matrix>|<data.frame>) with apply().
+* Commented out use of cout in ANN routines.
+* Added a function (correctBias) to check for bias and correct it by finding different neighbors.
+* Added an option to notablyDistant() to compute the threshold using quantile().
+* Changed Crookston's email address.
+
+Changes in version 1.0-16:
+
+* Fixed and moved this news files.
+* Fixed long standing error in the way Mahalanobis distances are computed
+(thanks to Petteri Packalen)
+* Fixed the use of "useid" in AsciiGridImpute and modified the help pages
+to make it more clear.
+* Removed the provisional use of a modified versions of randomForest.default as
+the stock version meets the needs. Also removed, for the same reason, a 
+modified version predict.cca.
+* Removed the long-deprecated "addXlevels" as it is no longer needed with newer 
+versions of randomForest.
+
+Changes in version 1.0-15:
+
+* The update to ANN headers were reapplied.
+
+Changes in version 1.0-14:
+
+* Fixed typos in yai.Rd
+* Added to the ability to pick neighbors at random among 1:k nearest in
+  function foruse().
+* Updated ANN headers for newer gcc
+
+Changes in version 1.0-13:
+
+* Bug fix in unionDataJoin that effects non-yaImpute uses of this function
+* Fixed AsciiGridImpute to better deal with NA's generated when ancillary
+  data are being mapped.
+* Fixed errorStats to deal with case where rmsd can not be computed due
+  to missing data.
+* Added drop=FALSE to deal with case where only one variable is left in
+  the computations of rmsd after variables with no observed values are removed.
+* Fixed some problems in the customized version of randomForest.default to
+  comply with current R coding standards.
+* Same as above for yaiRFSummary.
+
+Changes in version 1.0-12:
+
+* Not listed.
+
+Changes in version 1.0-11:
+
+* Not listed.
+
+Changes in version 1.0-10:
+
+* Not listed.
+
+Changes in version 1.0-9:
+
+* This NEWS file was started, prior changes were not logged.
+* Fixed error in AsciiGridImpute/AsciiGridPredict when lon/lat argument
+is used.
+* Improved the help file for AsciiGridImpute/AsciiGridPredict.
+
+
