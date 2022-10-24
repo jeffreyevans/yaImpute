@@ -19,4 +19,6 @@ Description: Performs nearest neighbor-based imputation using one or more altern
  that are notably distant from reference observations, detecting and correcting 
  for bias, bootstrapping and building ensemble imputations, and mapping results.
 License: GPL (>= 2)
-Packaged: 2022-10-24 19:08:47 UTC; ncrookston
+
+URL: https://github.com/jeffreyevans/yaImpute
+BugReports: https://github.com/jeffreyevans/yaImpute/issues
