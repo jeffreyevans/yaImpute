@@ -106,7 +106,7 @@ data(MoscowMtStJoe)
   A.M.S.; Gessler, P.E.; Morgan, P. (2006). Regression modeling and mapping
   of coniferous forest basal area and tree density from discrete-return
   lidar and multispectral satellite data. Can. J. Remote Sensing.
-  32(2):126-138. \url{https://www.fs.usda.gov/research/treesearch/24612}
+  32(2):126-138. \url{https://www.tandfonline.com/doi/abs/10.5589/m06-007}
 }
 
 \source{

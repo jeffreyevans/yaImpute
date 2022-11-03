@@ -39,7 +39,7 @@ rmsd.yai (object,vars=NULL,scale=FALSE,\dots)
 }
 
 \seealso{
-\code{\link{yai}}, \code{\link{impute.yai}} and \url{https://doi.org/10.18637/jss.v023.i10}.
+\code{\link{yai}}, \code{\link{impute.yai}} and \doi{https://doi.org/10.18637/jss.v023.i10}.
 }
 
 \author{
