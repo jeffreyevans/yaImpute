@@ -48,7 +48,7 @@ errorStats(mahal,\dots,scale=FALSE,pzero=0.1,plg=0.5,seeMethod="lm")
 }
 
 \details{
-See \url{https://academic.oup.com/forestscience/article/53/1/62/4604364?searchresult=1}
+See \url{https://academic.oup.com/forestscience/article/53/1/62/4604364}
 }
 
 \seealso{
@@ -83,7 +83,7 @@ errorStats(mal,msn)
   Stage, A.R.; Crookston, N.L. (2007). Partitioning error components
   for accuracy-assessment of near neighbor methods of imputation.
   \emph{For. Sci.} 53(1):62-72.
-  \url{https://academic.oup.com/forestscience/article/53/1/62/4604364?searchresult=1}
+  \url{https://academic.oup.com/forestscience/article/53/1/62/4604364}
 }
 
 

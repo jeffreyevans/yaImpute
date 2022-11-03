@@ -38,7 +38,7 @@ cor.yai (object,vars=NULL,\dots)
   Stage, A.R.; Crookston, N.L. (2007). Partitioning error components
   for accuracy-assessment of near neighbor methods of imputation.
   \emph{For. Sci.} 53(1):62-72.
-  \url{https://academic.oup.com/forestscience/article/53/1/62/4604364?searchresult=1}
+  \url{https://academic.oup.com/forestscience/article/53/1/62/4604364}
 }
 
 

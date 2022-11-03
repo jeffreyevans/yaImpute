@@ -92,7 +92,7 @@ ann(ref, target, k=1, eps=0.0, tree.type="kd",
   The \code{ann} function calls portions of the Approximate Nearest
   Neighbor Library, written by David M. Mount.  All of the \code{ann}
   function arguments are detailed in the ANN Programming Manual
-  found at \url{https://www.cs.umd.edu/~mount/ANN}.
+  found at \url{https://www.cs.umd.edu/~mount/ANN/}.
 }
 
 
