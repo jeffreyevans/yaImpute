@@ -6,6 +6,8 @@ status](http://www.r-pkg.org/badges/version/yaImpute)](https://cran.r-project.or
 downloads](http://cranlogs.r-pkg.org/badges/grand-total/yaImpute)](https://cran.r-project.org/package=yaImpute)
 <!-- badges: end -->
 
+# yaImpute (1.0-32) <img src="man/figures/logo.png" align="right" height="132" />
+
 yaImpute (Crookston & Finley 2007) Performs nearest neighbor-based imputation using one or more  
  alternative approaches to processing multivariate data. These include methods based on canonical 
  correlation: analysis, canonical correspondence analysis, and a multivariate adaptation 
