@@ -123,11 +123,11 @@ samples. The out-of-bag observations are then treated as targets.
 When \code{method="msnPP"} projection pursuit from \pkg{ccaPP} is used. The method is
 further controlled using argument \code{ppControl} to specify a character vector that has 
 has two named components.
-  \itemize{
-    \item{\code{method }}{One of the following 
-      \code{"spearman", "kendall", "quadrant", "M", "pearson"}, default is "spearman"}
-    \item{\code{search }}{If \code{"data"} or \code{"proj"}, then \code{\link[ccaPP]{ccaProj}} 
-      is used, otherwise the default \code{\link[ccaPP]{ccaGrid}} is used.}
+  \enumerate{
+    \item method - One of the following 
+      \code{"spearman", "kendall", "quadrant", "M", "pearson"}, default is "spearman"
+    \item searc - If \code{"data"} or \code{"proj"}, then \code{\link[ccaPP]{ccaProj}} 
+      is used, otherwise the default \code{\link[ccaPP]{ccaGrid}} is used.
   }
   
 Here are some details on argument \code{rfXsubsets}. When \code{method="randomForest"} 

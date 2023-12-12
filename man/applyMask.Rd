@@ -26,12 +26,12 @@ applyMask(object,refGroups=NULL, trgGroups=NULL, method="removeWhenCommon", k=1)
         of codes that indicate group membership. The data type and coding scheme of \code{refGroups} 
         and \code{trgGroups} must be the same.}
   \item{method}{is the strategy used for removing neighbors from the \code{object}, as follows:
-    \itemize{
-      \item{\code{removeWhenCommon }}{remove neighbors where the group membership of a
+    \enumerate{
+      \item removeWhenCommon - remove neighbors where the group membership of a
          target is the same as the group membership of the near neighbor reference (that is, keep 
-         near neighbors if they are not in the same group).}
-      \item{\code{keepWhenCommon }}{keep near neighbors only when the reference is in the same
-         group as the target (that is, remove near neighbors if they are not in the same group).}
+         near neighbors if they are not in the same group).
+      \item keepWhenCommon - keep near neighbors only when the reference is in the same
+         group as the target (that is, remove near neighbors if they are not in the same group).
      }}
   \item{k}{the number of nearest neighbors to keep.}
 }
@@ -94,7 +94,7 @@ applyMask(m55,iris$Species,trgGroups=iris2$Species,
 
 \author{
   Nicholas L. Crookston \email{ncrookston.fs@gmail.com} \cr
-  Acknowledgement: This function was inspired by correspondence with Clara Anton Fernandez.
+  Acknowledgment: This function was inspired by correspondence with Clara Anton Fernandez.
 }
 
 \keyword{multivariate}

@@ -172,13 +172,13 @@ void annError(const char *msg, ANNerr level)
 	if (level == ANNabort) {
 	  //cerr << "ANN: ERROR------->" << msg << "<-------------ERROR\n";
 	  Rprintf("ANN Fatal ERROR:");
-	  Rprintf(msg);
+	  Rprintf("%s", msg);
 //	  std::exit(1);
 	}
 	else {
 	  //cerr << "ANN: WARNING----->" << msg << "<-------------WARNING\n";
 	  Rprintf("ANN WARNING:");
-	  Rprintf(msg);
+	  Rprintf("%s", msg);
 	}
 }
 

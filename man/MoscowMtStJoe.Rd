@@ -19,85 +19,85 @@ data(MoscowMtStJoe)
   A data frame with 165 rows and 64 columns: \cr\cr
   Ground based measurements of trees:
   \itemize{
-    \item{\code{ABGR\_BA }}{Basal area \eqn{(m^2/ha)} of ABGR}
-    \item{\code{ABLA\_BA }}{Basal area \eqn{(m^2/ha)} of ABLA}
-    \item{\code{ACGL\_BA }}{Basal area \eqn{(m^2/ha)} of ACGL}
-    \item{\code{BEOC\_BA }}{Basal area \eqn{(m^2/ha)} of BEOC}
-    \item{\code{LAOC\_BA }}{Basal area \eqn{(m^2/ha)} of LAOC}
-    \item{\code{PICO\_BA }}{Basal area \eqn{(m^2/ha)} of PICO}
-    \item{\code{PIEN\_BA }}{Basal area \eqn{(m^2/ha)} of PIEN}
-    \item{\code{PIMO\_BA }}{Basal area \eqn{(m^2/ha)} of PIMO}
-    \item{\code{PIPO\_BA }}{Basal area \eqn{(m^2/ha)} of PIPO}
-    \item{\code{POBA\_BA }}{Basal area \eqn{(m^2/ha)} of POBA}
-    \item{\code{POTR\_BA }}{Basal area \eqn{(m^2/ha)} of POTR}
-    \item{\code{PSME\_BA }}{Basal area \eqn{(m^2/ha)} of PSME}
-    \item{\code{SAEX\_BA }}{Basal area \eqn{(m^2/ha)} of SAEX}
-    \item{\code{THPL\_BA }}{Basal area \eqn{(m^2/ha)} of THPL}
-    \item{\code{TSHE\_BA }}{Basal area \eqn{(m^2/ha)} of TSHE}
-    \item{\code{TSME\_BA }}{Basal area \eqn{(m^2/ha)} of TSME}
-    \item{\code{UNKN\_BA }}{Basal area \eqn{(m^2/ha)} of unknown species}
-    \item{\code{Total\_BA}}{Basal area \eqn{(m^2/ha)} total over all species}
-    \item{\code{ABGR\_TD }}{Trees per ha of ABGR}
-    \item{\code{ABLA\_TD }}{Trees per ha of ABLA}
-    \item{\code{ACGL\_TD }}{Trees per ha of ACGL}
-    \item{\code{BEOC\_TD }}{Trees per ha of BEOC}
-    \item{\code{LAOC\_TD }}{Trees per ha of LAOC}
-    \item{\code{PICO\_TD }}{Trees per ha of PICO}
-    \item{\code{PIEN\_TD }}{Trees per ha of PIEN}
-    \item{\code{PIMO\_TD }}{Trees per ha of PIMO}
-    \item{\code{PIPO\_TD }}{Trees per ha of PIPO}
-    \item{\code{POBA\_TD }}{Trees per ha of POBA}
-    \item{\code{POTR\_TD }}{Trees per ha of POTR}
-    \item{\code{PSME\_TD }}{Trees per ha of PSME}
-    \item{\code{SAEX\_TD }}{Trees per ha of SAEX}
-    \item{\code{THPL\_TD }}{Trees per ha of THPL}
-    \item{\code{TSHE\_TD }}{Trees per ha of TSHE}
-    \item{\code{TSME\_TD }}{Trees per ha of TSME}
-    \item{\code{UNKN\_TD }}{Trees per ha of unknown species}
-    \item{\code{Total\_TD}}{Trees per ha total over all species}}
-    
+    \item ABGR_BA - Basal area \eqn{(m^2/ha)} of ABGR
+    \item ABLA_BA - Basal area \eqn{(m^2/ha)} of ABLA
+    \item ACGL_BA - Basal area \eqn{(m^2/ha)} of ACGL
+    \item BEOC_BA - Basal area \eqn{(m^2/ha)} of BEOC
+    \item LAOC_BA - Basal area \eqn{(m^2/ha)} of LAOC
+    \item PICO_BA - Basal area \eqn{(m^2/ha)} of PICO
+    \item PIEN_BA - Basal area \eqn{(m^2/ha)} of PIEN
+    \item PIMO_BA - Basal area \eqn{(m^2/ha)} of PIMO
+    \item PIPO_BA - Basal area \eqn{(m^2/ha)} of PIPO
+    \item POBA_BA - Basal area \eqn{(m^2/ha)} of POBA
+    \item POTR_BA - Basal area \eqn{(m^2/ha)} of POTR
+    \item PSME_BA - Basal area \eqn{(m^2/ha)} of PSME
+    \item SAEX_BA - Basal area \eqn{(m^2/ha)} of SAEX
+    \item THPL_BA - Basal area \eqn{(m^2/ha)} of THPL
+    \item TSHE_BA - Basal area \eqn{(m^2/ha)} of TSHE
+    \item TSME_BA - Basal area \eqn{(m^2/ha)} of TSME
+    \item UNKN_BA - Basal area \eqn{(m^2/ha)} of unknown species
+    \item Total_B - Basal area \eqn{(m^2/ha)} total over all species
+    \item ABGR_TD - Trees per ha of ABGR
+    \item ABLA_TD - Trees per ha of ABLA
+    \item ACGL_TD - Trees per ha of ACGL
+    \item BEOC_TD - Trees per ha of BEOC
+    \item LAOC_TD - Trees per ha of LAOC
+    \item PICO_TD - Trees per ha of PICO
+    \item PIEN_TD - Trees per ha of PIEN
+    \item PIMO_TD - Trees per ha of PIMO
+    \item PIPO_TD - Trees per ha of PIPO
+    \item POBA_TD - Trees per ha of POBA
+    \item POTR_TD - Trees per ha of POTR
+    \item PSME_TD - Trees per ha of PSME
+    \item SAEX_TD - Trees per ha of SAEX
+    \item THPL_TD - Trees per ha of THPL
+    \item TSHE_TD - Trees per ha of TSHE
+    \item TSME_TD - Trees per ha of TSME
+    \item UNKN_TD - Trees per ha of unknown species
+    \item Total_T - Trees per ha total over all species
+  }    
   Geographic Location, Slope and Aspect:
-  \itemize{
-    \item{\code{EASTING  }}{UTM (Zone 11) easting at plot center}
-    \item{\code{NORTHING }}{UTM (Zone 11) northing at plot center}
-    \item{\code{ELEVATION}}{Mean elevation (m) above sea level over plot}
-    \item{\code{SLPMEAN  }}{Mean slope (percent) over plot}
-    \item{\code{ASPMEAN  }}{Mean aspect (degrees) over plot}
+  \enumerate{
+    \item EASTING   - UTM (Zone 11) easting at plot center
+    \item NORTHING  - UTM (Zone 11) northing at plot center
+    \item ELEVATION - Mean elevation (m) above sea level over plot
+    \item SLPMEAN   - Mean slope (percent) over plot
+    \item ASPMEAN   - Mean aspect (degrees) over plot
   }
   Advanced Land Imager (ALI):
-  \itemize{
-    \item{\code{B1MEAN }}{Mean of 30 m ALI band 1 pixels intersecting plot}
-    \item{\code{B2MEAN }}{Mean of 30 m ALI band 2 pixels intersecting plot}
-    \item{\code{B3MEAN }}{Mean of 30 m ALI band 3 pixels intersecting plot}
-    \item{\code{B4MEAN }}{Mean of 30 m ALI band 4 pixels intersecting plot}
-    \item{\code{B5MEAN }}{Mean of 30 m ALI band 5 pixels intersecting plot}
-    \item{\code{B6MEAN }}{Mean of 30 m ALI band 6 pixels intersecting plot}
-    \item{\code{B7MEAN }}{Mean of 30 m ALI band 7 pixels intersecting plot}
-    \item{\code{B8MEAN }}{Mean of 30 m ALI band 8 pixels intersecting plot}
-    \item{\code{B9MEAN }}{Mean of 30 m ALI band 9 pixels intersecting plot}
-    \item{\code{PANMEAN}}{Mean of 10 m PAN band pixels intersecting plot}
-    \item{\code{PANSTD }}{Standard deviation of 10 m PAN band pixels intersecting plot}
+  \enumerate{
+    \item B1MEAN - Mean of 30 m ALI band 1 pixels intersecting plot
+    \item B2MEAN - Mean of 30 m ALI band 2 pixels intersecting plot
+    \item B3MEAN - Mean of 30 m ALI band 3 pixels intersecting plot
+    \item B4MEAN - Mean of 30 m ALI band 4 pixels intersecting plot
+    \item B5MEAN - Mean of 30 m ALI band 5 pixels intersecting plot
+    \item B6MEAN - Mean of 30 m ALI band 6 pixels intersecting plot
+    \item B7MEAN - Mean of 30 m ALI band 7 pixels intersecting plot
+    \item B8MEAN - Mean of 30 m ALI band 8 pixels intersecting plot
+    \item B9MEAN - Mean of 30 m ALI band 9 pixels intersecting plot
+    \item PANMEA - Mean of 10 m PAN band pixels intersecting plot
+    \item PANSTD - Standard deviation of 10 m PAN band pixels intersecting plot
   }
   LiDAR Intensity:
- \itemize{
-    \item{\code{INTMEAN}}{Mean of 2 m intensity pixels intersecting plot}
-    \item{\code{INTSTD }}{Standard deviation of 2 m intensity pixels intersecting plot}
-    \item{\code{INTMIN }}{Minimum of 2 m intensity pixels intersecting plot}
-    \item{\code{INTMAX }}{Maximum of 2 m intensity pixels intersecting plot}
+ \enumerate{
+    \item INTMEAN - Mean of 2 m intensity pixels intersecting plot
+    \item INTSTD  - Standard deviation of 2 m intensity pixels intersecting plot
+    \item INTMIN  - Minimum of 2 m intensity pixels intersecting plot
+    \item INTMAX  - Maximum of 2 m intensity pixels intersecting plot
   }
   LiDAR Height:
-  \itemize{
-    \item{\code{HTMEAN}}{Mean of 6 m height pixels intersecting plot}
-    \item{\code{HTSTD }}{Standard deviation of 6 m height pixels intersecting plot}
-    \item{\code{HTMIN }}{Minimum of 6 m height pixels intersecting plot}
-    \item{\code{HTMAX }}{Maximum of 6 m height pixels intersecting plot}
+  \enumerate{
+    \item HTMEAN - Mean of 6 m height pixels intersecting plot
+    \item HTSTD  - Standard deviation of 6 m height pixels intersecting plot
+    \item HTMIN  - Minimum of 6 m height pixels intersecting plot
+    \item HTMAX  - Maximum of 6 m height pixels intersecting plot
   }
   LiDAR Canopy Cover:
-  \itemize{
-    \item{\code{CCMEAN}}{Mean of 6 m canopy cover pixels intersecting plot}
-    \item{\code{CCSTD }}{Standard deviation of 6 m canopy cover pixels intersecting plot}
-    \item{\code{CCMIN }}{Minimum of 6 m canopy cover pixels intersecting plot}
-    \item{\code{CCMAX }}{Maximum of 6 m canopy cover pixels intersecting plot}
+  \enumerate{
+    \item CCMEAN - Mean of 6 m canopy cover pixels intersecting plot
+    \item CCSTD  - Standard deviation of 6 m canopy cover pixels intersecting plot
+    \item CCMIN  - Minimum of 6 m canopy cover pixels intersecting plot
+    \item CCMAX  - Maximum of 6 m canopy cover pixels intersecting plot
   }
 }
 

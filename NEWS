@@ -215,4 +215,10 @@ Changes in version 1.0-9:
 is used.
 * Improved the help file for AsciiGridImpute/AsciiGridPredict.
 
+Changes in version 1.0-32:
 
+* Jeffrey S. Evans took over package maintenance
+
+Changes in version 1.0-33:
+
+* Fixed "warning: format string is not a string literal (potentially insecure) [-Wformat-security]" in ANN.cpp clang (v 17.0.5) compile under linux Fedora

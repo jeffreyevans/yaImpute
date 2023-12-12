@@ -27,7 +27,7 @@ grmsd(\dots,ancillaryData=NULL,vars=NULL,wts=NULL,rtnVectors=FALSE,imputeMethod=
   \item{ancillaryData}{a data frame that defines variables, passed to 
     \code{\link{impute.yai}}.}
   \item{vars}{a list of variable names you want to include; if NULL all available
-    variables are included (note that if code{\link{impute.yai}} the 
+    variables are included (note that if impute.yai the 
     \emph{Y}-variables are returned when \code{vars=NULL}).}
   \item{wts}{A vector of weights used to compute the mean distances, see 
     details below.}

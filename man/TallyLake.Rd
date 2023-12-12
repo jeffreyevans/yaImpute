@@ -17,43 +17,43 @@ data(TallyLake)
 \format{
   A data frame with 847 rows and 29 columns: \cr\cr
   Ground based measurements of trees (Y-variables):
-  \itemize{
-     \item{\code{TopHt     }}{Height of tallest trees (ft)}
-     \item{\code{LnVolL    }}{Log of the volume \eqn{(ft^3/acre)} of western larch}
-     \item{\code{LnVolDF   }}{Log of the volume \eqn{(ft^3/acre)} of Douglas-fir}
-     \item{\code{LnVolLP   }}{Log of the volume \eqn{(ft^3/acre)} of lodgepole pine}
-     \item{\code{LnVolES   }}{Log of the volume \eqn{(ft^3/acre)} of Engelmann spruce}
-     \item{\code{LnVolAF   }}{Log of the volume \eqn{(ft^3/acre)} of alpine fir}
-     \item{\code{LnVolPP   }}{Log of the volume \eqn{(ft^3/acre)} of ponderosa pine}
-     \item{\code{CCover    }}{Canopy cover (percent)}
+  \enumerate{
+     \item TopHt   - Height of tallest trees (ft)
+     \item LnVolL  - Log of the volume \eqn{(ft^3/acre)} of western larch
+     \item LnVolDF - Log of the volume \eqn{(ft^3/acre)} of Douglas-fir
+     \item LnVolLP - Log of the volume \eqn{(ft^3/acre)} of lodgepole pine
+     \item LnVolES - Log of the volume \eqn{(ft^3/acre)} of Engelmann spruce
+     \item LnVolAF - Log of the volume \eqn{(ft^3/acre)} of alpine fir
+     \item LnVolPP - Log of the volume \eqn{(ft^3/acre)} of ponderosa pine
+     \item CCover  - Canopy cover (percent)
   }
   Geographic Location, Slope, and Aspect (X-variables):
-  \itemize{
-    \item{\code{utmx      }}{UTM easting at plot center}
-    \item{\code{utmy      }}{UTM northing at plot center}
-    \item{\code{elevm     }}{Mean elevation (ft) above sea level over plot}
-    \item{\code{eevsqrd   }}{\eqn{(elevm-1600)^2}}
-    \item{\code{slopem    }}{Mean slope (percent) over plot}
-    \item{\code{slpcosaspm}}{Mean of slope (proportion) times the cosine of aspect (see
-      Stage (1976) for description of this transformation)}
-    \item{\code{slpsinaspm}}{Mean of slope (proportion) times the sine of aspect}
+  \enumerate{
+    \item utmx - UTM easting at plot center
+    \item utmy - UTM northing at plot center
+    \item elevm - Mean elevation (ft) above sea level over plot
+    \item eevsqrd - \eqn{(elevm-1600)^2}
+    \item slopem - Mean slope (percent) over plot
+    \item slpcosaspm - Mean of slope (proportion) times the cosine of aspect (see
+      Stage (1976) for description of this transformation
+    \item slpsinaspm - Mean of slope (proportion) times the sine of aspect
   }
   Additional X-variables:
-  \itemize{
-    \item{\code{ctim    }}{Mean of slope curviture over pixels in stand}
-    \item{\code{tmb1m   }}{Mean of LandSat band 1 over pixels in stand}
-    \item{\code{tmb2m   }}{Mean of LandSat band 2 over pixels in stand}
-    \item{\code{tmb3m   }}{Mean of LandSat band 3 over pixels in stand}
-    \item{\code{tmb4m   }}{Mean of LandSat band 4 over pixels in stand}
-    \item{\code{tmb5m   }}{Mean of LandSat band 5 over pixels in stand}
-    \item{\code{tmb6m   }}{Mean of LandSat band 6 over pixels in stand}
-    \item{\code{durm    }}{Mean of light duration over pixels in stand}
-    \item{\code{insom   }}{Mean of solar insolation over pixels in stand}
-    \item{\code{msavim  }}{Mean of AVI for pixels in stand}
-    \item{\code{ndvim   }}{Mean of NDVI for pixels in stand}
-    \item{\code{crvm    }}{Mean of slope curviture for pixels in stand}
-    \item{\code{tancrvm }}{Mean of tangent curvature for pixels in stand}
-    \item{\code{tancrvsd}}{Standard deviation of tangent curvature for pixels in stand}
+  \enumerate{
+    \item ctim     - Mean of slope curviture over pixels in stand
+    \item tmb1m    - Mean of LandSat band 1 over pixels in stand
+    \item tmb2m    - Mean of LandSat band 2 over pixels in stand
+    \item tmb3m    - Mean of LandSat band 3 over pixels in stand
+    \item tmb4m    - Mean of LandSat band 4 over pixels in stand
+    \item tmb5m    - Mean of LandSat band 5 over pixels in stand
+    \item tmb6m    - Mean of LandSat band 6 over pixels in stand
+    \item durm     - Mean of light duration over pixels in stand
+    \item insom    - Mean of solar insolation over pixels in stand
+    \item msavim   - Mean of AVI for pixels in stand
+    \item ndvim    - Mean of NDVI for pixels in stand
+    \item crvm     - Mean of slope curviture for pixels in stand
+    \item tancrvm  - Mean of tangent curvature for pixels in stand
+    \item tancrvsd - Standard deviation of tangent curvature for pixels in stand
   }
 }
 

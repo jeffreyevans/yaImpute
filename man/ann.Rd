@@ -42,12 +42,12 @@ ann(ref, target, k=1, eps=0.0, tree.type="kd",
     nodes with more points than the bucket size.  The splitting
     rule applies to both the kd-tree and bd-tree.  Splitting rule
     options are the quoted key words:
-    \itemize{
-      \item{\code{standard}}{ - standard kd-tree}
-      \item{\code{midpt}}{ - midpoint}
-      \item{\code{fair}}{ - fair-split}
-      \item{\code{sl\_midpt}}{ - sliding-midpoint (default)}
-      \item{\code{sl\{fair}}{ - fair-split rule}
+    \enumerate{
+      \item standard - standard kd-tree
+      \item midpt - midpoint
+      \item fair - fair-split
+      \item midpt - sliding-midpoint (default)
+      \item fair - fair-split rule
     }
     See supporting documentation, reference below, for a thorough
     description and discussion of these splitting rules. }
@@ -55,10 +55,10 @@ ann(ref, target, k=1, eps=0.0, tree.type="kd",
     strategy (beyond the splitting rule) for the recursive partitioning
     of nodes.  This argument is ignored if \code{tree.type} is specified
     as \emph{kd}. Shrinking rule options are quoted key words:
-    \itemize{
-      \item{\code{none}}{ - equivalent to the kd-tree}
-      \item{\code{simple}}{ - simple shrink (default)}
-      \item{\code{centroid}}{ - centroid shrink}
+    \enumerate{
+      \item none - equivalent to the kd-tree
+      \item simple - simple shrink (default)
+      \item centroid - centroid shrink
     }
     See supporting documentation, reference below, for a thorough description and
     discussion of these shrinking rules. }

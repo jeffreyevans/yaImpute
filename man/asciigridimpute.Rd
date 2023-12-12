@@ -34,12 +34,12 @@ AsciiGridPredict(object,xfiles,outfiles,xtypes=NULL,lon=NULL,lat=NULL,
        as the X-variables they correspond with and there must be one file for
        each X-variable used when \code{object} was built.}
   \item{outfiles}{One of these two forms:
-      \itemize{
-       \item{(1) }{A file name that is understood to correspond to the single prediction
+      \enumerate{
+       \item A file name that is understood to correspond to the single prediction
        returned by the generic \code{\link[stats]{predict}} function
        related to \code{object} or returned by \code{myPredFunc}. This form only
-       applies to \code{AsciiGridPredict}, when the object is not class \code{yai}.}
-       \item{(2) }{A \code{\link[base]{list}} of output file names where there is
+       applies to \code{AsciiGridPredict}, when the object is not class \code{yai}.
+	   \item A \code{\link[base]{list}} of output file names where there is
        one grid file for each \emph{desired} output variable. While there may be
        many variables predicted for \code{object}, only those for which an
        output grid is desire need to be specified. Note that some predict functions return
@@ -52,7 +52,8 @@ AsciiGridPredict(object,xfiles,outfiles,xtypes=NULL,lon=NULL,lat=NULL,
        reference observations is output.
        When the predict function returns a vector,
        an additional special name of \code{predict=}\emph{\dQuote{filename}} can be
-       used.} }}
+       used.} }
+	   
   \item{xtypes}{A list of data type names that corresponds exactly to data type of the
        maps listed in \code{xfiles}. Each value can be one of:
        \code{"logical", "integer", "numeric", "character"}. If NULL,
@@ -102,7 +103,7 @@ AsciiGridPredict(object,xfiles,outfiles,xtypes=NULL,lon=NULL,lat=NULL,
   at a time from each. The output file(s) are created one line at time as the
   input maps are processed.
 
-  Use \code{AsciiGridImpute} for objects builts with \code{\link{yai}},
+  Use \code{AsciiGridImpute} for objects builds with \code{\link{yai}},
   otherwise use \code{AsciiGridPredict}. When \code{AsciiGridPredict} is
   used, the following rules apply. First, when \code{myPredFunc} is not
   null it is called with the arguments \code{object, newdata, \dots} where the
