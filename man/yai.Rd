@@ -48,30 +48,30 @@ yai(x=NULL,y=NULL,data=NULL,k=1,noTrgs=FALSE,noRefs=FALSE,
     \code{msn} or \code{msn2}.}
   \item{method}{is the strategy used for computing distance and therefore for finding neighbors; the
     options are quoted key words (see details):
-    \itemize{
-      \item{\code{euclidean }}{distance is computed in a normalized X space.}
-      \item{\code{raw }}{like euclidean, except no normalization is done.}
-      \item{\code{mahalanobis }}{ distance is computed in its namesakes space.}
-      \item{\code{ica }}{like mahalanobis, but based on \emph{Independent Component Analysis} using
-          package \code{\link[fastICA]{fastICA}}.}
-      \item{\code{msn }}{distance is computed in a projected canonical space.}
-      \item{\code{msn2 }}{like msn, but with variance weighting (canonical regression
-            rather than correlation).}
-      \item{\code{msnPP }}{like msn, except that the canonical correlation is computed using
-            projection pursuit from \pkg{ccaPP} (see argument \code{ppControl}).}
-      \item{\code{gnn }}{ distance is computed using a projected ordination of
+    \enumerate{
+      \item euclidean - distance is computed in a normalized X space.
+      \item raw - like euclidean, except no normalization is done.
+      \item mahalanobis - distance is computed in its namesakes space.
+      \item ica - like mahalanobis, but based on \emph{Independent Component Analysis} using
+          package \code{\link[fastICA]{fastICA}}.
+      \item msn - distance is computed in a projected canonical space.
+      \item msn2 - like msn, but with variance weighting (canonical regression
+            rather than correlation).
+      \item msnPP - like msn, except that the canonical correlation is computed using
+            projection pursuit from \pkg{ccaPP} (see argument \code{ppControl}).
+      \item gnn - distance is computed using a projected ordination of
          Xs found using canonical correspondence analysis
          (\code{\link[vegan]{cca}} from package \pkg{vegan}). 
          If \code{\link[vegan]{cca}} fails, \code{\link[vegan]{rda}} is used
-         and a warning is issued.}
-      \item{\code{randomForest }}{ distance is one minus the proportion of 
+         and a warning is issued.
+      \item randomForest - distance is one minus the proportion of 
          \pkg{randomForest} trees where a target observation is in the same terminal node 
-         as a reference observation (see \code{\link[randomForest]{randomForest}}).}
-      \item{\code{random }}{ like raw except that the X space is a single vector of uniform random [0,1]
+         as a reference observation (see \code{\link[randomForest]{randomForest}}).
+      \item random - like raw except that the X space is a single vector of uniform random [0,1]
          numbers generated using \code{\link[stats]{runif}}, results in random assignment of neighbors,
-         and forces \code{ann} to be FALSE.}
-      \item{\code{gower }}{ distance is computed in its namesakes space using function 
-        \code{\link[gower]{gower_topn}} from package \pkg{gower}; forces \code{ann} to be FALSE.}
+         and forces \code{ann} to be FALSE.
+      \item gower - distance is computed in its namesakes space using function 
+        \code{\link[gower]{gower_topn}} from package \pkg{gower}; forces \code{ann} to be FALSE.
     }   
   }
   \item{ann}{TRUE if \code{\link{ann}} is used to find neighbors, FALSE if a slow search is used.}
