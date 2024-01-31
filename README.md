@@ -1,10 +1,6 @@
-# yaImpute (CRAN 1.0-32, dev 1.0-33) 
-<!-- badges: start -->
-[![CRAN
-status](http://www.r-pkg.org/badges/version/yaImpute)](https://cran.r-project.org/package=yaImpute)
-[![CRAN RStudio mirror
-downloads](http://cranlogs.r-pkg.org/badges/grand-total/yaImpute)](https://cran.r-project.org/package=yaImpute)
-<!-- badges: end -->
+# lleather/yaImpute - a fork
+
+I've updated the yai.R script to retain the OOB observations in random forest models. 
 
 # yaImpute (1.0-32) <img src="man/figures/logo.png" align="right" height="132" />
 
