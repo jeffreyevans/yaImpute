@@ -578,7 +578,7 @@ yai <- function(x=NULL,y=NULL,data=NULL,k=1,noTrgs=FALSE,noRefs=FALSE,
          mt = if (is.null(mtry)) max(floor(sqrt(ncol(xRefs))),1) else 
                                  min(mtry, ncol(xRefs))
          ranForest=randomForest(x=xRefs,y=yone,proximity=FALSE,importance=TRUE,
-                                keep.forest=TRUE,mtry=mt,ntree=ntree, keep.inbag=TRUE)
+                                keep.forest=TRUE,mtry=mt,ntree=ntree, keep.inbag=TRUE, predict.all = TRUE)
          ranForest$type="yaImputeUnsupervised"
          ranForest=list(unsupervised=ranForest)
       }
@@ -624,7 +624,7 @@ yai <- function(x=NULL,y=NULL,data=NULL,k=1,noTrgs=FALSE,noRefs=FALSE,
                                     min(mtry, length(xN))
             ranForest[[i]]=randomForest(x=xRefs[,xN,FALSE],
               y=yone,proximity=FALSE,importance=TRUE,keep.forest=TRUE,
-              mtry=mt,ntree=ntree[i], keep.inbag = TRUE)
+              mtry=mt,ntree=ntree[i], keep.inbag = TRUE, predict.all = TRUE)
          }
          names(ranForest)=colnames(yRefs)
       }
