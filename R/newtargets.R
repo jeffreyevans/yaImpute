@@ -27,7 +27,7 @@
 #   ann: use ann or not...if null, the value is taken from object.
 #
 
-newtargets=function(object,newdata,k=NULL,ann=NULL)
+newtargets=function(object,newdata,k=NULL,ann=NULL,nVec=NULL)
 {
    if(!inherits(object, "yai")) stop ("object must be class yai")
    if (object$method == "ensemble") 
@@ -112,15 +112,20 @@ newtargets=function(object,newdata,k=NULL,ann=NULL)
    if (nrow(xTrgs)==0) stop("no observations")
    if (object$method == "gnn") # gnn
    {
+      # Reduce the number of axes if requested
+      if (is.null(nVec))
+         nVec=object$ccaVegan$CCA$rank
+      nVec=min(nVec,object$ccaVegan$CCA$rank)
+      nVec=max(nVec,1)
+
       # create a projected space for the reference observations
-      xcvRefs=predict(object$ccaVegan,type="lc",rank="full")
-      xcvRefs=xcvRefs %*% diag(sqrt(object$ccaVegan$CCA$eig/sum(object$ccaVegan$CCA$eig)))
+      xcvRefs=predict(object$ccaVegan,type="lc",rank=nVec)
+      xcvRefs=xcvRefs %*% diag(sqrt(object$ccaVegan$CCA$eig/sum(object$ccaVegan$CCA$eig))[1:nVec])
 
       # create a projected space for the unknowns (target observations)
       xcvTrgs=scale(xTrgs,center=object$xScale$center,scale=object$xScale$scale)
-      xcvTrgs=predict(object$ccaVegan,newdata=as.data.frame(xcvTrgs),type="lc",rank="full")
-      xcvTrgs=xcvTrgs %*% diag(sqrt(object$ccaVegan$CCA$eig/sum(object$ccaVegan$CCA$eig)))
-      nVec = ncol(xcvRefs)
+      xcvTrgs=predict(object$ccaVegan,newdata=as.data.frame(xcvTrgs),type="lc",rank=nVec)
+      xcvTrgs=xcvTrgs %*% diag(sqrt(object$ccaVegan$CCA$eig/sum(object$ccaVegan$CCA$eig))[1:nVec])
    }
    else if (object$method == "randomForest") # randomForest
    {
