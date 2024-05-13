@@ -2,6 +2,15 @@
 
 I've updated the yai.R script to retain the OOB observations in random forest models. 
 
+This is a simple addition-- in the yai.R script, I simply added the parameter "in.bag = TRUE" to the default Random Forests Call. 
+
+E.g.: 
+
+```
+ranForest=randomForest(x=xRefs,y=yone,proximity=FALSE,importance=TRUE,
+                                keep.forest=TRUE,mtry=mt,ntree=ntree, keep.inbag=TRUE)
+```
+
 # yaImpute (1.0-32) <img src="man/figures/logo.png" align="right" height="132" />
 
 yaImpute (Crookston & Finley 2007) Performs nearest neighbor-based imputation using one or more 
