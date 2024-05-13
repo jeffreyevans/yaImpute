@@ -547,9 +547,15 @@ yai <- function(x=NULL,y=NULL,data=NULL,k=1,noTrgs=FALSE,noRefs=FALSE,
         ccaVegan = rda(X=yRefs, Y=xcvRefs)
       }
 
+      # reduce the number of axes if requested
+      if (is.null(nVec))
+         nVec=ccaVegan$CCA$rank
+      nVec=min(nVec,ccaVegan$CCA$rank)
+      nVec=max(nVec,1)
+
       # create a projected space for the reference observations
-      xcvRefs=predict(ccaVegan,type="lc",rank="full")
-      xcvRefs=xcvRefs %*% diag(sqrt(ccaVegan$CCA$eig/sum(ccaVegan$CCA$eig)))
+      xcvRefs=predict(ccaVegan,type="lc",rank=nVec)
+      xcvRefs=xcvRefs %*% diag(sqrt(ccaVegan$CCA$eig/sum(ccaVegan$CCA$eig))[1:nVec])
 
       # create a projected space for the unknowns (target observations)
       if (!noTrgs && length(trgs) > 0)
@@ -557,10 +563,9 @@ yai <- function(x=NULL,y=NULL,data=NULL,k=1,noTrgs=FALSE,noRefs=FALSE,
          xTrgs=xall[trgs,,drop=FALSE]
          xcvTrgs=scale(xTrgs,center=xScale$center,scale=xScale$scale)
          xcvTrgs=predict(ccaVegan,
-                 newdata=as.data.frame(xcvTrgs),type="lc",rank="full")
-         xcvTrgs=xcvTrgs %*% diag(sqrt(ccaVegan$CCA$eig/sum(ccaVegan$CCA$eig)))
+                 newdata=as.data.frame(xcvTrgs),type="lc",rank=nVec)
+         xcvTrgs=xcvTrgs %*% diag(sqrt(ccaVegan$CCA$eig/sum(ccaVegan$CCA$eig))[1:nVec])
       }
-      nVec = ncol(xcvRefs)
    }
    else if (method == "randomForest")
    {  
