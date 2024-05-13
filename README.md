@@ -1,8 +1,10 @@
 # lleather/yaImpute - a fork
 
-I've updated the yai.R script to retain the OOB observations in random forest models. 
+I've updated the yai.R script to retain the out-of-bag OOB observations in Random Forest models. 
 
-This is a simple addition-- in the yai.R script, I simply added the parameter "in.bag = TRUE" to the default Random Forests Call. 
+This is useful for calculating out-of-bag evaluation statistics for the RF models, which was not previously possible with outputs from the yaImpute package.
+
+This is a simple addition-- in the yai.R script, I simply added the parameter "in.bag = TRUE" to the default Random Forests call. 
 
 E.g.: 
 
