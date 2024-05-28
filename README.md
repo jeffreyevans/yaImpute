@@ -1,4 +1,4 @@
-# yaImpute (CRAN 1.0-32, dev 1.0-33) 
+# yaImpute (CRAN 1.0-33, dev 1.0-34) 
 <!-- badges: start -->
 [![CRAN
 status](http://www.r-pkg.org/badges/version/yaImpute)](https://cran.r-project.org/package=yaImpute)
@@ -6,10 +6,9 @@ status](http://www.r-pkg.org/badges/version/yaImpute)](https://cran.r-project.or
 downloads](http://cranlogs.r-pkg.org/badges/grand-total/yaImpute)](https://cran.r-project.org/package=yaImpute)
 <!-- badges: end -->
 
-Lila Leatherman made reccomendation to provide an option for retaning the OOB object from a 
-randomForest model. This has been added to the `yai` function as oob = c(FALSE, TRUE) 
+* Lila Leatherman made reccomendation to provide an option for retaning the OOB object from a randomForest model. This has been added to the `yai` function as oob = c(FALSE, TRUE) 
 
-# yaImpute (1.0-32) <img src="man/figures/logo.png" align="right" height="132" />
+# yaImpute (1.0-34) <img src="man/figures/logo.png" align="right" height="132" />
 
 yaImpute (Crookston & Finley 2007) Performs nearest neighbor-based imputation using one or more 
 alternative approaches to processing multivariate data. These include methods based on canonical 

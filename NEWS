@@ -222,3 +222,8 @@ Changes in version 1.0-32:
 Changes in version 1.0-33:
 
 * Fixed "warning: format string is not a string literal (potentially insecure) [-Wformat-security]" in ANN.cpp clang (v 17.0.5) compile under linux Fedora
+
+Changes in version 1.0-34:
+
+* Lila Leatherman made reccomendation to provide an option for retaning the OOB object from a randomForest model. 
+  This has been added to the `yai` function as oob = c(FALSE, TRUE) 
