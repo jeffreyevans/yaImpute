@@ -1,4 +1,4 @@
-# yaImpute (CRAN 1.0-33, dev 1.0-34) 
+# yaImpute (CRAN 1.0-34, dev 1.0-35) 
 <!-- badges: start -->
 [![CRAN
 status](http://www.r-pkg.org/badges/version/yaImpute)](https://cran.r-project.org/package=yaImpute)
