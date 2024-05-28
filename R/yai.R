@@ -1,7 +1,7 @@
 yai <- function(x=NULL,y=NULL,data=NULL,k=1,noTrgs=FALSE,noRefs=FALSE,
                 nVec=NULL,pVal=.05,method="msn",ann=TRUE,mtry=NULL,ntree=500,
                 rfMode="buildClasses",bootstrap=FALSE,ppControl=NULL,
-                sampleVars=NULL,rfXsubsets=NULL)
+                sampleVars=NULL,rfXsubsets=NULL,oob=FALSE)
 {
    # define functions used internally.
    sumSqDiff=function(x,y) { d=x-y; sum(d*d) }
@@ -582,8 +582,10 @@ yai <- function(x=NULL,y=NULL,data=NULL,k=1,noTrgs=FALSE,noRefs=FALSE,
          yone=NULL
          mt = if (is.null(mtry)) max(floor(sqrt(ncol(xRefs))),1) else 
                                  min(mtry, ncol(xRefs))
-         ranForest=randomForest(x=xRefs,y=yone,proximity=FALSE,importance=TRUE,
-                                keep.forest=TRUE,mtry=mt,ntree=ntree, keep.inbag=TRUE)
+        predictall = if(oob) TRUE else FALSE
+        ranForest=randomForest(x=xRefs,y=yone,proximity=FALSE,importance=TRUE,
+                                keep.forest=TRUE,mtry=mt,ntree=ntree, keep.inbag=TRUE, 
+								predict.all = predictall)
          ranForest$type="yaImputeUnsupervised"
          ranForest=list(unsupervised=ranForest)
       }
@@ -627,9 +629,11 @@ yai <- function(x=NULL,y=NULL,data=NULL,k=1,noTrgs=FALSE,noRefs=FALSE,
             }
             mt = if (is.null(mtry)) max(floor(sqrt(length(xN))), 1) else 
                                     min(mtry, length(xN))
+			predictall = if(oob) TRUE else FALSE
             ranForest[[i]]=randomForest(x=xRefs[,xN,FALSE],
               y=yone,proximity=FALSE,importance=TRUE,keep.forest=TRUE,
-              mtry=mt,ntree=ntree[i], keep.inbag = TRUE)
+              mtry=mt,ntree=ntree[i], keep.inbag = TRUE, 
+			  predict.all = predictall)
          }
          names(ranForest)=colnames(yRefs)
       }

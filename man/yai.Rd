@@ -23,7 +23,7 @@
 yai(x=NULL,y=NULL,data=NULL,k=1,noTrgs=FALSE,noRefs=FALSE,
     nVec=NULL,pVal=.05,method="msn",ann=TRUE,mtry=NULL,ntree=500,
     rfMode="buildClasses",bootstrap=FALSE,ppControl=NULL,sampleVars=NULL,
-    rfXsubsets=NULL)
+    rfXsubsets=NULL,oob=FALSE)
 }
 
 \arguments{
@@ -96,7 +96,9 @@ yai(x=NULL,y=NULL,data=NULL,k=1,noTrgs=FALSE,noRefs=FALSE,
       variables to be included in the sample. Specification of a large number will cause the 
       sequence of variables to be randomized.}
   \item{rfXsubsets}{a named list of character vectors where there is one vector for each
-      Y-variable, see details, only applies when \code{method="randomForest"}}
+      Y-variable, see details, only applies when \code{method="randomForest"}}  
+  \item{oob}{Boolean when TRUE keep OOB in randomForest models, default FALSE. This is useful 
+      for calculating out-of-bag evaluation statistics for the models \code{method="randomForest"}}
 }
 
 \details{
