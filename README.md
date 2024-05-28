@@ -6,7 +6,7 @@ status](http://www.r-pkg.org/badges/version/yaImpute)](https://cran.r-project.or
 downloads](http://cranlogs.r-pkg.org/badges/grand-total/yaImpute)](https://cran.r-project.org/package=yaImpute)
 <!-- badges: end -->
 
-* Lila Leatherman made reccomendation to provide an option for retaning the OOB object from a randomForest model. This has been added to the `yai` function as oob = c(FALSE, TRUE) 
+* Lila Leatherman made the recommendation to retanin the OOB object from a randomForest model. This has been added to the `yai` function as oob = c(FALSE, TRUE) 
 
 # yaImpute (1.0-34) <img src="man/figures/logo.png" align="right" height="132" />
 
