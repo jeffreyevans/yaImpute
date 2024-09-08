@@ -1,8 +1,8 @@
 Package: yaImpute
 Type: Package
 Title: Nearest Neighbor Observation Imputation and Evaluation Tools
-Version: 1.0-34
-Date: 2024-05-28
+Version: 1.0-35
+Date: 2024-09-88
 Authors@R: c(
   person(family="Evans", given="Jeffrey S.", email = "jeffrey_evans@tnc.org", 
          role = c("aut", "cre"), comment = c(ORCID = "0000-0002-5533-7044")),
@@ -18,7 +18,7 @@ Description: Performs nearest neighbor-based imputation using one or more altern
     comparing the results from running alternative techniques, detecting imputation targets 
     that are notably distant from reference observations, detecting and correcting 
     for bias, bootstrapping and building ensemble imputations, and mapping results.
-Depends: R (>= 3.0.0)
+Depends: R (>= 4.0.0)
 Imports: 
   grDevices, 
   graphics, 

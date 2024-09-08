@@ -31,6 +31,8 @@
 #include "ANN/ANNperf.h"				// ANN performance 
 //using namespace std;					// make std:: accessible
 
+#define R_NO_REMAP
+
 #include <R.h>
 
 //----------------------------------------------------------------------
@@ -171,14 +173,12 @@ void annError(const char *msg, ANNerr level)
 {
 	if (level == ANNabort) {
 	  //cerr << "ANN: ERROR------->" << msg << "<-------------ERROR\n";
-	  Rprintf("ANN Fatal ERROR:");
-	  Rprintf("%s", msg);
+	  Rprintf("ANN Fatal ERROR: %s",msg);
 //	  std::exit(1);
 	}
 	else {
 	  //cerr << "ANN: WARNING----->" << msg << "<-------------WARNING\n";
-	  Rprintf("ANN WARNING:");
-	  Rprintf("%s", msg);
+	  Rprintf("ANN WARNING: %s",msg);
 	}
 }
 

@@ -227,3 +227,7 @@ Changes in version 1.0-35:
 
 * Lila Leatherman made reccomendation to provide an option for retaning the OOB object from a randomForest model. 
   This has been added to the `yai` function as oob = c(FALSE, TRUE) 
+
+Changes in version 1.0-36:
+
+* Fixed C++ issues associateed with ann function (Nick Crookston made modifications to C++ code)

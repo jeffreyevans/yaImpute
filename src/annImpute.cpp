@@ -5,6 +5,7 @@
 #include <ctime>
 using namespace std;
 
+#define R_NO_REMAP
 #include <R.h>
 #include <Rmath.h>
 #include <Rinternals.h>
@@ -44,7 +45,7 @@ extern "C" {
 
     //ref matrix
     PROTECT(ref = getListElement(args, "ref"));  nProtect++;
-    PROTECT(refDims = getAttrib(ref, R_DimSymbol)); nProtect++;      
+    PROTECT(refDims = Rf_getAttrib(ref, R_DimSymbol)); nProtect++;
     refDim1 = INTEGER(refDims)[0];
     refDim2 = INTEGER(refDims)[1];
     dataPts = annAllocPts(refDim1, refDim2);
@@ -81,12 +82,12 @@ extern "C" {
 
     //target matrix
     PROTECT(target = getListElement(args, "target"));  nProtect++;
-    PROTECT(tarDims = getAttrib(target, R_DimSymbol)); nProtect++;
+    PROTECT(tarDims = Rf_getAttrib(target, R_DimSymbol)); nProtect++;
     tarDim1 = INTEGER(tarDims)[0];
     tarDim2 = INTEGER(tarDims)[1];
     
     //target return matrix nnIdx and dists
-    PROTECT(knnIndxDistMtrx = allocMatrix(REALSXP, tarDim1, k+k)); nProtect++;
+    PROTECT(knnIndxDistMtrx = Rf_allocMatrix(REALSXP, tarDim1, k+k)); nProtect++;
 
     if(verbose){
       Rprintf("Target points completed: ");
@@ -177,18 +178,18 @@ extern "C" {
     ***************************/
     SEXP result, resultNames, time;
     int nResultListObjs = 2;
-    PROTECT(time = allocVector(REALSXP, 1)); nProtect++;
+    PROTECT(time = Rf_allocVector(REALSXP, 1)); nProtect++;
     REAL(time)[0] = searchTime;
 
-    PROTECT(result = allocVector(VECSXP, nResultListObjs)); nProtect++;
-    PROTECT(resultNames = allocVector(STRSXP, nResultListObjs)); nProtect++;
+    PROTECT(result = Rf_allocVector(VECSXP, nResultListObjs)); nProtect++;
+    PROTECT(resultNames = Rf_allocVector(STRSXP, nResultListObjs)); nProtect++;
 
     SET_VECTOR_ELT(result, 0, knnIndxDistMtrx);
     SET_VECTOR_ELT(result, 1, time);
     
-    SET_STRING_ELT(resultNames, 0, mkChar("knnIndexDist"));
-    SET_STRING_ELT(resultNames, 1, mkChar("searchTime"));
-    namesgets(result, resultNames);
+    SET_STRING_ELT(resultNames, 0, Rf_mkChar("knnIndexDist"));
+    SET_STRING_ELT(resultNames, 1, Rf_mkChar("searchTime"));
+    Rf_namesgets(result, resultNames);
     
 
 
