@@ -9,7 +9,7 @@
 }
 
 \usage{
-newtargets(object,newdata,k=NULL,ann=NULL)
+newtargets(object,newdata,k=NULL,ann=NULL,nVec=NULL)
 }
 
 \arguments{
@@ -21,6 +21,7 @@ newtargets(object,newdata,k=NULL,ann=NULL)
        neighbors to find.}
   \item{ann}{if NULL, the value is taken from \code{object}. When TRUE \code{\link{ann}} is
        used to find neighbors, and when FALSE a slow exact search is used.}
+  \item{nVec}{If defined, specify the number of axes in the CCA } 
 }
 
 \value{

@@ -26,6 +26,8 @@
 #
 #   ann: use ann or not...if null, the value is taken from object.
 #
+#   nVec: If defined, specify the number of axes in the CCA 
+#
 
 newtargets=function(object,newdata,k=NULL,ann=NULL,nVec=NULL)
 {

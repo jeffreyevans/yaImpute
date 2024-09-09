@@ -2,7 +2,7 @@ Package: yaImpute
 Type: Package
 Title: Nearest Neighbor Observation Imputation and Evaluation Tools
 Version: 1.0-35
-Date: 2024-09-88
+Date: 2024-09-09
 Authors@R: c(
   person(family="Evans", given="Jeffrey S.", email = "jeffrey_evans@tnc.org", 
          role = c("aut", "cre"), comment = c(ORCID = "0000-0002-5533-7044")),
