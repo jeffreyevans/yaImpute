@@ -4,7 +4,7 @@ Title: Nearest Neighbor Observation Imputation and Evaluation Tools
 Version: 1.0-35
 Date: 2024-09-09
 Authors@R: c(
-  person(family="Evans", given="Jeffrey S.", email = "jeffrey_evans@tnc.org", 
+  person(family="Evans", given="Jeffrey S.", email = "sage_insights@outlook.com", 
          role = c("aut", "cre"), comment = c(ORCID = "0000-0002-5533-7044")),
   person(family="Crookston", given="Nicholas L.", role = c("aut")),
   person(family="Finley", given="Andrew O.", role = c("aut")),			 
